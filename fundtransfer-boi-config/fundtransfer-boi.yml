@@ -1,0 +1,27 @@
+spring: 
+  api: 
+    checkbalance: 
+      context-path: /InternalBankAccount/{internalbankaccountId}/Retrieve
+      hosturl: /checkbalance
+      jolt-filename: checkBalance354051-jolt.json
+    compliancecheck: 
+      context-path: /RegulatoryCompliance/{regulatorycomplianceId}/Retrieve
+      hosturl: compliancecheck
+      jolt-filename: complianceCheck992016-jolt.json
+    getaccountdetails: 
+      context-path: /CurrentAccount/{currentaccountId}/Retrieve
+      hosturl: getaccdetails
+      jolt-filename: getaccountdetails225393-jolt.json
+    initiatefundtransfer: 
+      context-path: /PaymentInitiation/Initiate
+      hosturl: paymentInitiation
+      jolt-filename: initiatefundtransfer471844-jolt.json
+    paymentexecution: 
+      context-path: /PaymentExecution/Initiate
+      hosturl: paymentexecution
+      jolt-filename: paymentexecution695786-jolt.json
+  datasource: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: ${mysql_pwd}
+    url: jdbc:mysql://${mysql_url}:3306/camunda
+    username: ${mysql_user}
